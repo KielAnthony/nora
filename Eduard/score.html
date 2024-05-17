@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Checker</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0; /* Light gray */
+            color: #333; /* Dark gray */
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            width: 200px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
+            transform: scale(1.05);
+        }
+
+        #dem {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Grade Checker</h1>
+    <p>Place a Grade</p>
+    <input type="text" id="get" placeholder="Grades">
+    <button id="no" onclick="rye()" style="background-color: #4a90e2;">Check</button>
+    <p id="dem"></p>
+
+    <script>
+        function rye() {
+            var val = parseInt(document.getElementById("get").value);
+            let rye = document.getElementById("dem");
+
+            if (isNaN(val)) {
+                rye.innerHTML = "Please enter a valid grade";
+            } else if (val <= 70) {
+                rye.innerHTML = "Repeat Class";
+            } else if (val <= 74) {
+                rye.innerHTML = "Grade: F";
+            } else if (val <= 76) {
+                rye.innerHTML = "Grade: C";
+            } else if (val <= 82) {
+                rye.innerHTML = "Grade: B";
+            } else if (val <= 88) {
+                rye.innerHTML = "Grade: B+";
+            } else if (val <= 94) {
+                rye.innerHTML = "Grade: A";
+            } else if (val <= 100) {
+                rye.innerHTML = "Grade: A+";
+            } else if (val > 100) {
+                rye.innerHTML = "Grade not defined";
+            }
+        }
+    </script>
+</body>
+
+</html>

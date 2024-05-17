@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .generator-container {
+            display: inline-block;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #0047ab; /* Hard blue */
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #003c86; /* Darker blue on hover */
+        }
+
+        #triangleOutput {
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            white-space: pre-wrap;
+            text-align: left;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><i>Triangle Generator</i></h1>
+    <div class="generator-container">
+        <label for="number">Number to display:</label>
+        <input type="number" id="number" min="1" placeholder="Enter a number">
+        <button onclick="generateTriangle()">Generate Triangle</button>
+    </div>
+    <pre id="triangleOutput"></pre>
+
+    <script>
+        function generateTriangle() {
+            const number = parseInt(document.getElementById("number").value);
+
+            if (isNaN(number) || number < 1) {
+                document.getElementById("triangleOutput").textContent = "Please enter a valid number.";
+                return;
+            }
+
+            let triangle = "";
+
+            for (let i = 1; i <= number; i++) {
+                triangle += (number + " ").repeat(i) + "\n";
+            }
+
+            document.getElementById("triangleOutput").textContent = triangle;
+        }
+    </script>
+</body>
+
+</html>

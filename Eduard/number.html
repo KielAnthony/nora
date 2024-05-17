@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Reversal</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0; /* Light gray */
+            color: #333; /* Dark gray */
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            width: 200px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff; /* Blue */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            transform: scale(1.05);
+        }
+
+        #reverseOutput {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Number Reversal</h1>
+    <label for="numberInput">Enter a Number:</label>
+    <input type="text" id="numberInput">
+    <button onclick="reverseNumber()">Reverse</button>
+    <p id="reverseOutput"></p>
+</body>
+
+<script>
+    function reverseNumber() {
+        const userInput = document.getElementById("numberInput").value;
+        const reversedNumber = parseFloat(userInput.split('').reverse().join(''));
+        
+        document.getElementById("reverseOutput").textContent = `Reversed Number: ${reversedNumber}`;
+    }
+</script>
+
+</html>
